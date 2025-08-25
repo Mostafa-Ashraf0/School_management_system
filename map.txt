@@ -1,0 +1,24 @@
+📁 school-management/
+├── index.html  ← login
+├── dashboard.html
+├── students.html
+├── subjects.html
+├── grades.html
+├── messages.html
+├── profile.html
+├── settings.html
+├── css/
+│   └── style.css
+├── js/
+│   ├── auth.js
+│   ├── dashboard.js
+│   ├── students.js
+│   ├── subjects.js
+│   ├── grades.js
+│   ├── messages.js
+│   ├── profile.js
+│   └── settings.js
+├── assets/
+│   └── images, icons
+└── data/
+    └── sampleData.json (أو تخزين بـ localStorage)

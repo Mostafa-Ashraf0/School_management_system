@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="flex items-center justify-center min-h-screen bg-stone-100">
+        <div class="bg-white p-8 rounded-lg shadow-md w-100 h-110 flex flex-col items-center">
+            
+            <h2 class="text-3xl font-bold  text-center mb-8 tracking-wide text-sky-950w-80 ">Login</h2>
+            <form class="w-full" action="/login" method="POST">
+                <div class="mb-8 flex items-center border-b-2 border-gray-300 pl-2 gap-2">
+                    <i class="fas fa-user text-blue-500"></i>
+                    <input type="text" id="username" name="username" class="w-full p-2 font-medium 
+                    outline-none" placeholder="User Name" required>
+                </div>
+                <div class="mb-8 flex items-center border-b-2 border-gray-300 pl-2 gap-2">
+                    <i class="fa-solid fa-key text-blue-500"></i>
+                    <input type="password" id="password" name="password" class="w-full p-2  font-medium 
+                    outline-none" placeholder="Password" required>
+                </div>
+                <div class="mb-14">
+                    <select id="dropdown" name="accountType" class="w-full p-2 border-b-2 border-gray-300 
+                    rounded font-medium outline-none"required>
+                        <option value="" disabled selected hidden>Select Account Type</option>
+                        <option value="admin">Student</option>
+                        <option value="user">Teacher</option>
+                        <option value="guest">Admin</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded 
+                    hover:bg-blue-600 font-medium cursor-pointer">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

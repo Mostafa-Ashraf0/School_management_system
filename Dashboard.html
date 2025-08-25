@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Dashboard</title>
+</head>
+<body style="box-sizing: border-box; margin: 0; padding: 0;">
+    
+    <div class="flex bg-white ">
+        <div class=" flex flex-col min-h-screen w-[20%] justify-between">
+            <div class="logo w-[100%] h-[80px] flex items-center justify-center p-2">
+                <img src="https://img.freepik.com/premium-vector/employee-management-icon-vector-image-can-be-used-project-management_120816-132629.jpg" alt="logo"
+                class="w-[100%] h-[100%] object-contain">
+            </div>
+            <div class="Sidebar flex flex-col h-screen w-[100%] justify-between text-stone-400 text-sm font-medium py-6 px-4">
+                <ul class="flex flex-col py-4 h-[80%] px-2 gap-4">
+                    <li><a href="Dashboard.html" class="current">Dashboard</a></li>
+                    <li><a href="Students.html">Students</a></li>
+                    <li><a href="">Courses</a></li>
+                    <li><a href="">settings</a></li>
+                </ul>
+            
+            </div>
+            <button class="w-full bg-blue-500 text-white p-2 rounded 
+                    hover:bg-blue-600 font-medium cursor-pointer" 
+                    type="button" id="logout">logout</button>
+            
+        </div>
+        <div class="min-h-screen bg-blue-50 w-[80%] px-10 flex flex-col gap-2">
+            <header class="w-[100%] h-[70px] p-2">
+                <h3 class="text-stone-400 font-semibold text-sm">OVERVIEW</h3>
+                <h1 class="text-2xl font-bold">Dashboard</h1>
+            </header>
+            <div class="dash items-center">
+                <div class="cards-container flex w-[100%] gap-4 mb-8">
+                    <div class="card w-[25%] h-20 rounded-lg px-6 py-2 shadow-md bg-white flex justify-between items-center">
+                        <div class="text">
+                            <h3 class="text-stone-400 font-semibold">Total Students</h3>
+                            <h1 class="t-students font-bold text-3xl pl-2">0</h1>
+                        </div>
+                        <i class="fa-solid fa-graduation-cap text-xl text-stone-400"></i>
+                    </div>
+                    <div class="card w-[25%] h-20 rounded-lg px-6 py-2 shadow-md bg-white flex justify-between items-center">
+                        <div class="text">
+                            <h3 class="text-stone-400 font-semibold">Total Hours</h3>
+                            <h1 class="t-hours font-bold text-3xl pl-2">0</h1>
+                        </div>
+                        <i class="fa-solid fa-clock text-xl text-stone-400"></i>
+                    </div>
+                    <div class="card w-[25%] h-20 rounded-lg px-6 py-2 shadow-md bg-white flex justify-between items-center">
+                        <div class="text">
+                            <h3 class="text-stone-400 font-semibold">Average Age</h3>
+                            <h1 class="a-age font-bold text-3xl pl-2">0</h1>
+                        </div>
+                        <i class="fa-solid fa-chart-simple text-xl text-stone-400"></i>
+                    </div>
+                    <div class="card w-[25%] h-20 rounded-lg px-6 py-2 shadow-md bg-white flex justify-between items-center">
+                        <div class="text">
+                            <h3 class="text-stone-400 font-semibold">Average Hours</h3>
+                            <h1 class="a-hours font-bold text-3xl pl-2">0</h1>
+                        </div>
+                        <i class="fa-solid fa-hourglass-start text-xl text-stone-400"></i>
+                    </div>
+                </div>
+                <div class="charts flex w-[100%] flex-col">
+                    <div class="flex gap-5 w-[100%] mb-8">
+                        <div class="w-[50%] rounded-lg px-4 pt-2 pb-6 shadow-md bg-white flex items-center ">
+                            <canvas id="gender" class=" w-[100%] h-60"></canvas>
+                        </div>
+                        <div class="w-[50%] rounded-lg px-4 pt-2 pb-6 shadow-md bg-white flex items-center">
+                            <canvas id="age" class=" w-[100%] h-60"></canvas>
+                        </div>
+                    </div>
+                    <div class="flex w-[100%] rounded-lg px-4 pt-2 pb-6 shadow-md bg-white"">
+                        <div class="w-[100%]">
+                            <canvas id="hours" class=" w-[100%] h-70"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="Dashboard.js"></script>
+</body>
+</html>

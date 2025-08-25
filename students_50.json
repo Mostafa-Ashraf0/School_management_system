@@ -1,0 +1,702 @@
+[
+  {
+    "id": 1,
+    "name": "Ahmed Hussein",
+    "age": 21,
+    "gender": "Male",
+    "total_hours": 133,
+    "grades": {
+      "Math": 85,
+      "English": 58,
+      "Physics": 83,
+      "Chemistry": 70,
+      "Biology": 99
+    }
+  },
+  {
+    "id": 2,
+    "name": "Tamer Ashraf",
+    "age": 20,
+    "gender": "Male",
+    "total_hours": 97,
+    "grades": {
+      "Math": 70,
+      "English": 56,
+      "Physics": 96,
+      "Chemistry": 57,
+      "Biology": 85
+    }
+  },
+  {
+    "id": 3,
+    "name": "Ahmed Farid",
+    "age": 18,
+    "gender": "Male",
+    "total_hours": 30,
+    "grades": {
+      "Math": 94,
+      "English": 78,
+      "Physics": 62,
+      "Chemistry": 92,
+      "Biology": 87
+    }
+  },
+  {
+    "id": 4,
+    "name": "Mostafa Ibrahim",
+    "age": 22,
+    "gender": "Male",
+    "total_hours": 40,
+    "grades": {
+      "Math": 60,
+      "English": 75,
+      "Physics": 60,
+      "Chemistry": 55,
+      "Biology": 99
+    }
+  },
+  {
+    "id": 5,
+    "name": "Sara Salah",
+    "age": 21,
+    "gender": "Female",
+    "total_hours": 80,
+    "grades": {
+      "Math": 79,
+      "English": 86,
+      "Physics": 63,
+      "Chemistry": 95,
+      "Biology": 68
+    }
+  },
+  {
+    "id": 6,
+    "name": "Tamer Adel",
+    "age": 20,
+    "gender": "Male",
+    "total_hours": 75,
+    "grades": {
+      "Math": 52,
+      "English": 51,
+      "Physics": 69,
+      "Chemistry": 85,
+      "Biology": 59
+    }
+  },
+  {
+    "id": 7,
+    "name": "Karim Hassan",
+    "age": 20,
+    "gender": "Male",
+    "total_hours": 65,
+    "grades": {
+      "Math": 51,
+      "English": 99,
+      "Physics": 54,
+      "Chemistry": 68,
+      "Biology": 100
+    }
+  },
+  {
+    "id": 8,
+    "name": "Salma Zaki",
+    "age": 22,
+    "gender": "Female",
+    "total_hours": 20,
+    "grades": {
+      "Math": 79,
+      "English": 93,
+      "Physics": 60,
+      "Chemistry": 78,
+      "Biology": 50
+    }
+  },
+  {
+    "id": 9,
+    "name": "Fatma Fouad",
+    "age": 22,
+    "gender": "Female",
+    "total_hours": 134,
+    "grades": {
+      "Math": 90,
+      "English": 99,
+      "Physics": 61,
+      "Chemistry": 99,
+      "Biology": 81
+    }
+  },
+  {
+    "id": 10,
+    "name": "Ali Kamel",
+    "age": 22,
+    "gender": "Male",
+    "total_hours": 147,
+    "grades": {
+      "Math": 54,
+      "English": 81,
+      "Physics": 75,
+      "Chemistry": 87,
+      "Biology": 60
+    }
+  },
+  {
+    "id": 11,
+    "name": "Laila Farid",
+    "age": 22,
+    "gender": "Female",
+    "total_hours": 119,
+    "grades": {
+      "Math": 86,
+      "English": 77,
+      "Physics": 74,
+      "Chemistry": 62,
+      "Biology": 54
+    }
+  },
+  {
+    "id": 12,
+    "name": "Mona Fouad",
+    "age": 20,
+    "gender": "Female",
+    "total_hours": 113,
+    "grades": {
+      "Math": 97,
+      "English": 78,
+      "Physics": 100,
+      "Chemistry": 97,
+      "Biology": 72
+    }
+  },
+  {
+    "id": 13,
+    "name": "Mona Adel",
+    "age": 20,
+    "gender": "Female",
+    "total_hours": 124,
+    "grades": {
+      "Math": 77,
+      "English": 78,
+      "Physics": 55,
+      "Chemistry": 85,
+      "Biology": 77
+    }
+  },
+  {
+    "id": 14,
+    "name": "Nada Ragab",
+    "age": 18,
+    "gender": "Female",
+    "total_hours": 103,
+    "grades": {
+      "Math": 76,
+      "English": 51,
+      "Physics": 70,
+      "Chemistry": 60,
+      "Biology": 81
+    }
+  },
+  {
+    "id": 15,
+    "name": "Nour Magdy",
+    "age": 20,
+    "gender": "Female",
+    "total_hours": 97,
+    "grades": {
+      "Math": 53,
+      "English": 71,
+      "Physics": 59,
+      "Chemistry": 59,
+      "Biology": 90
+    }
+  },
+  {
+    "id": 16,
+    "name": "Dina Mahmoud",
+    "age": 20,
+    "gender": "Female",
+    "total_hours": 113,
+    "grades": {
+      "Math": 91,
+      "English": 62,
+      "Physics": 96,
+      "Chemistry": 55,
+      "Biology": 50
+    }
+  },
+  {
+    "id": 17,
+    "name": "Mostafa Salah",
+    "age": 21,
+    "gender": "Male",
+    "total_hours": 104,
+    "grades": {
+      "Math": 79,
+      "English": 97,
+      "Physics": 93,
+      "Chemistry": 72,
+      "Biology": 50
+    }
+  },
+  {
+    "id": 18,
+    "name": "Omar Mohamed",
+    "age": 23,
+    "gender": "Male",
+    "total_hours": 118,
+    "grades": {
+      "Math": 57,
+      "English": 53,
+      "Physics": 69,
+      "Chemistry": 63,
+      "Biology": 98
+    }
+  },
+  {
+    "id": 19,
+    "name": "Fatma Mohamed",
+    "age": 23,
+    "gender": "Female",
+    "total_hours": 97,
+    "grades": {
+      "Math": 75,
+      "English": 98,
+      "Physics": 70,
+      "Chemistry": 72,
+      "Biology": 67
+    }
+  },
+  {
+    "id": 20,
+    "name": "Aya Adel",
+    "age": 22,
+    "gender": "Female",
+    "total_hours": 105,
+    "grades": {
+      "Math": 96,
+      "English": 79,
+      "Physics": 65,
+      "Chemistry": 54,
+      "Biology": 100
+    }
+  },
+  {
+    "id": 21,
+    "name": "Amr Fouad",
+    "age": 21,
+    "gender": "Male",
+    "total_hours": 102,
+    "grades": {
+      "Math": 65,
+      "English": 86,
+      "Physics": 57,
+      "Chemistry": 57,
+      "Biology": 91
+    }
+  },
+  {
+    "id": 22,
+    "name": "Omar Ibrahim",
+    "age": 18,
+    "gender": "Male",
+    "total_hours": 90,
+    "grades": {
+      "Math": 78,
+      "English": 52,
+      "Physics": 61,
+      "Chemistry": 63,
+      "Biology": 84
+    }
+  },
+  {
+    "id": 23,
+    "name": "Ali Adel",
+    "age": 22,
+    "gender": "Male",
+    "total_hours": 137,
+    "grades": {
+      "Math": 76,
+      "English": 76,
+      "Physics": 93,
+      "Chemistry": 95,
+      "Biology": 53
+    }
+  },
+  {
+    "id": 24,
+    "name": "Ahmed Ali",
+    "age": 19,
+    "gender": "Male",
+    "total_hours": 112,
+    "grades": {
+      "Math": 75,
+      "English": 71,
+      "Physics": 68,
+      "Chemistry": 79,
+      "Biology": 80
+    }
+  },
+  {
+    "id": 25,
+    "name": "Amr Hussein",
+    "age": 19,
+    "gender": "Male",
+    "total_hours": 136,
+    "grades": {
+      "Math": 52,
+      "English": 63,
+      "Physics": 71,
+      "Chemistry": 96,
+      "Biology": 57
+    }
+  },
+  {
+    "id": 26,
+    "name": "Youssef Salah",
+    "age": 18,
+    "gender": "Male",
+    "total_hours": 120,
+    "grades": {
+      "Math": 62,
+      "English": 93,
+      "Physics": 60,
+      "Chemistry": 82,
+      "Biology": 81
+    }
+  },
+  {
+    "id": 27,
+    "name": "Ahmed Ibrahim",
+    "age": 23,
+    "gender": "Male",
+    "total_hours": 99,
+    "grades": {
+      "Math": 77,
+      "English": 89,
+      "Physics": 99,
+      "Chemistry": 81,
+      "Biology": 69
+    }
+  },
+  {
+    "id": 28,
+    "name": "Fatma Tarek",
+    "age": 20,
+    "gender": "Female",
+    "total_hours": 93,
+    "grades": {
+      "Math": 70,
+      "English": 56,
+      "Physics": 61,
+      "Chemistry": 91,
+      "Biology": 73
+    }
+  },
+  {
+    "id": 29,
+    "name": "Salma Ragab",
+    "age": 23,
+    "gender": "Female",
+    "total_hours": 106,
+    "grades": {
+      "Math": 66,
+      "English": 73,
+      "Physics": 93,
+      "Chemistry": 74,
+      "Biology": 100
+    }
+  },
+  {
+    "id": 30,
+    "name": "Amr Khaled",
+    "age": 21,
+    "gender": "Male",
+    "total_hours": 145,
+    "grades": {
+      "Math": 72,
+      "English": 58,
+      "Physics": 60,
+      "Chemistry": 73,
+      "Biology": 84
+    }
+  },
+  {
+    "id": 31,
+    "name": "Nour Ali",
+    "age": 23,
+    "gender": "Male",
+    "total_hours": 123,
+    "grades": {
+      "Math": 57,
+      "English": 68,
+      "Physics": 82,
+      "Chemistry": 63,
+      "Biology": 66
+    }
+  },
+  {
+    "id": 32,
+    "name": "Nour Mostafa",
+    "age": 23,
+    "gender": "Female",
+    "total_hours": 122,
+    "grades": {
+      "Math": 86,
+      "English": 80,
+      "Physics": 93,
+      "Chemistry": 89,
+      "Biology": 72
+    }
+  },
+  {
+    "id": 33,
+    "name": "Salma Mahmoud",
+    "age": 22,
+    "gender": "Female",
+    "total_hours": 103,
+    "grades": {
+      "Math": 54,
+      "English": 62,
+      "Physics": 75,
+      "Chemistry": 91,
+      "Biology": 85
+    }
+  },
+  {
+    "id": 34,
+    "name": "Huda Zaki",
+    "age": 23,
+    "gender": "Female",
+    "total_hours": 99,
+    "grades": {
+      "Math": 61,
+      "English": 98,
+      "Physics": 60,
+      "Chemistry": 60,
+      "Biology": 100
+    }
+  },
+  {
+    "id": 35,
+    "name": "Salma Salah",
+    "age": 19,
+    "gender": "Female",
+    "total_hours": 143,
+    "grades": {
+      "Math": 91,
+      "English": 80,
+      "Physics": 76,
+      "Chemistry": 56,
+      "Biology": 92
+    }
+  },
+  {
+    "id": 36,
+    "name": "Amr Kamel",
+    "age": 23,
+    "gender": "Male",
+    "total_hours": 94,
+    "grades": {
+      "Math": 99,
+      "English": 67,
+      "Physics": 80,
+      "Chemistry": 85,
+      "Biology": 53
+    }
+  },
+  {
+    "id": 37,
+    "name": "Omar Tarek",
+    "age": 20,
+    "gender": "Male",
+    "total_hours": 146,
+    "grades": {
+      "Math": 95,
+      "English": 60,
+      "Physics": 75,
+      "Chemistry": 64,
+      "Biology": 84
+    }
+  },
+  {
+    "id": 38,
+    "name": "Salma Magdy",
+    "age": 22,
+    "gender": "Female",
+    "total_hours": 126,
+    "grades": {
+      "Math": 52,
+      "English": 97,
+      "Physics": 61,
+      "Chemistry": 95,
+      "Biology": 52
+    }
+  },
+  {
+    "id": 39,
+    "name": "Sara Tarek",
+    "age": 23,
+    "gender": "Female",
+    "total_hours": 145,
+    "grades": {
+      "Math": 83,
+      "English": 86,
+      "Physics": 98,
+      "Chemistry": 89,
+      "Biology": 59
+    }
+  },
+  {
+    "id": 40,
+    "name": "Nour Mohamed",
+    "age": 21,
+    "gender": "Female",
+    "total_hours": 141,
+    "grades": {
+      "Math": 52,
+      "English": 68,
+      "Physics": 73,
+      "Chemistry": 98,
+      "Biology": 76
+    }
+  },
+  {
+    "id": 41,
+    "name": "Nada Ibrahim",
+    "age": 19,
+    "gender": "Female",
+    "total_hours": 140,
+    "grades": {
+      "Math": 88,
+      "English": 92,
+      "Physics": 53,
+      "Chemistry": 78,
+      "Biology": 92
+    }
+  },
+  {
+    "id": 42,
+    "name": "Fatma Kamel",
+    "age": 18,
+    "gender": "Female",
+    "total_hours": 131,
+    "grades": {
+      "Math": 100,
+      "English": 91,
+      "Physics": 75,
+      "Chemistry": 53,
+      "Biology": 66
+    }
+  },
+  {
+    "id": 43,
+    "name": "Mostafa Ibrahim",
+    "age": 23,
+    "gender": "Male",
+    "total_hours": 107,
+    "grades": {
+      "Math": 88,
+      "English": 82,
+      "Physics": 98,
+      "Chemistry": 56,
+      "Biology": 77
+    }
+  },
+  {
+    "id": 44,
+    "name": "Tamer Fouad",
+    "age": 23,
+    "gender": "Male",
+    "total_hours": 105,
+    "grades": {
+      "Math": 81,
+      "English": 85,
+      "Physics": 50,
+      "Chemistry": 72,
+      "Biology": 75
+    }
+  },
+  {
+    "id": 45,
+    "name": "Mahmoud Ragab",
+    "age": 25,
+    "gender": "Male",
+    "total_hours": 95,
+    "grades": {
+      "Math": 59,
+      "English": 89,
+      "Physics": 68,
+      "Chemistry": 60,
+      "Biology": 82
+    }
+  },
+  {
+    "id": 46,
+    "name": "Hassan Ashraf",
+    "age": 24,
+    "gender": "Male",
+    "total_hours": 137,
+    "grades": {
+      "Math": 89,
+      "English": 76,
+      "Physics": 74,
+      "Chemistry": 96,
+      "Biology": 92
+    }
+  },
+  {
+    "id": 47,
+    "name": "Hassan Tarek",
+    "age": 22,
+    "gender": "Male",
+    "total_hours": 113,
+    "grades": {
+      "Math": 60,
+      "English": 61,
+      "Physics": 81,
+      "Chemistry": 74,
+      "Biology": 60
+    }
+  },
+  {
+    "id": 48,
+    "name": "Ali Mahmoud",
+    "age": 23,
+    "gender": "Male",
+    "total_hours": 130,
+    "grades": {
+      "Math": 54,
+      "English": 89,
+      "Physics": 71,
+      "Chemistry": 85,
+      "Biology": 53
+    }
+  },
+  {
+    "id": 49,
+    "name": "Aya Kamel",
+    "age": 25,
+    "gender": "Female",
+    "total_hours": 106,
+    "grades": {
+      "Math": 86,
+      "English": 92,
+      "Physics": 59,
+      "Chemistry": 71,
+      "Biology": 94
+    }
+  },
+  {
+    "id": 50,
+    "name": "Karim Fouad",
+    "age": 24,
+    "gender": "Male",
+    "total_hours": 105,
+    "grades": {
+      "Math": 50,
+      "English": 72,
+      "Physics": 79,
+      "Chemistry": 87,
+      "Biology": 63
+    }
+  }
+]
