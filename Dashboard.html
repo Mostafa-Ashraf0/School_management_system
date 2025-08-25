@@ -9,14 +9,14 @@
 </head>
 <body style="box-sizing: border-box; margin: 0; padding: 0;">
     
-    <div class="flex bg-white ">
-        <div class=" flex flex-col min-h-screen w-[20%] justify-between">
+    <div class="flex bg-white p-5 gap-5">
+        <div class=" flex flex-col min-h-screen w-[20%] items-center p-5 justify-between bg-stone-100 rounded-3xl">
             <div class="logo w-[100%] h-[80px] flex items-center justify-center p-2">
                 <img src="https://img.freepik.com/premium-vector/employee-management-icon-vector-image-can-be-used-project-management_120816-132629.jpg" alt="logo"
                 class="w-[100%] h-[100%] object-contain">
             </div>
-            <div class="Sidebar flex flex-col h-screen w-[100%] justify-between text-stone-400 text-sm font-medium py-6 px-4">
-                <ul class="flex flex-col py-4 h-[80%] px-2 gap-4">
+            <div class="Sidebar flex flex-col h-screen w-[100%] justify-between text-stone-400 text-sm font-medium py-6">
+                <ul class="flex flex-col py-4 h-[80%] gap-4">
                     <li><a href="Dashboard.html" class="current">Dashboard</a></li>
                     <li><a href="Students.html">Students</a></li>
                     <li><a href="">Courses</a></li>
@@ -29,35 +29,35 @@
                     type="button" id="logout">logout</button>
             
         </div>
-        <div class="min-h-screen bg-blue-50 w-[80%] px-10 flex flex-col gap-2">
-            <header class="w-[100%] h-[70px] p-2">
+        <div class="min-h-screen bg-white w-[80%] flex flex-col gap-2">
+            <header class="w-[100%] h-[70px] p-10 bg-stone-100 rounded-3xl flex flex-col justify-center">
                 <h3 class="text-stone-400 font-semibold text-sm">OVERVIEW</h3>
                 <h1 class="text-2xl font-bold">Dashboard</h1>
             </header>
-            <div class="dash items-center">
-                <div class="cards-container flex w-[100%] gap-4 mb-8">
-                    <div class="card w-[25%] h-20 rounded-lg px-6 py-2 shadow-md bg-white flex justify-between items-center">
+            <div class="dash items-center bg-stone-100 p-5 rounded-2xl">
+                <div class="cards-container flex w-[100%] gap-2 mb-2">
+                    <div class="card w-[25%] h-20 rounded-lg px-6 py-2 bg-white flex justify-between items-center">
                         <div class="text">
                             <h3 class="text-stone-400 font-semibold">Total Students</h3>
                             <h1 class="t-students font-bold text-3xl pl-2">0</h1>
                         </div>
                         <i class="fa-solid fa-graduation-cap text-xl text-stone-400"></i>
                     </div>
-                    <div class="card w-[25%] h-20 rounded-lg px-6 py-2 shadow-md bg-white flex justify-between items-center">
+                    <div class="card w-[25%] h-20 rounded-lg px-6 py-2 bg-white flex justify-between items-center">
                         <div class="text">
                             <h3 class="text-stone-400 font-semibold">Total Hours</h3>
                             <h1 class="t-hours font-bold text-3xl pl-2">0</h1>
                         </div>
                         <i class="fa-solid fa-clock text-xl text-stone-400"></i>
                     </div>
-                    <div class="card w-[25%] h-20 rounded-lg px-6 py-2 shadow-md bg-white flex justify-between items-center">
+                    <div class="card w-[25%] h-20 rounded-lg px-6 py-2 bg-white flex justify-between items-center">
                         <div class="text">
                             <h3 class="text-stone-400 font-semibold">Average Age</h3>
                             <h1 class="a-age font-bold text-3xl pl-2">0</h1>
                         </div>
                         <i class="fa-solid fa-chart-simple text-xl text-stone-400"></i>
                     </div>
-                    <div class="card w-[25%] h-20 rounded-lg px-6 py-2 shadow-md bg-white flex justify-between items-center">
+                    <div class="card w-[25%] h-20 rounded-lg px-6 py-2 bg-white flex justify-between items-center">
                         <div class="text">
                             <h3 class="text-stone-400 font-semibold">Average Hours</h3>
                             <h1 class="a-hours font-bold text-3xl pl-2">0</h1>
@@ -66,15 +66,30 @@
                     </div>
                 </div>
                 <div class="charts flex w-[100%] flex-col">
-                    <div class="flex gap-5 w-[100%] mb-8">
-                        <div class="w-[50%] rounded-lg px-4 pt-2 pb-6 shadow-md bg-white flex items-center ">
+                    <div class="flex gap-2 w-[100%] mb-2">
+                        <div class="w-[30%] rounded-lg px-4 pt-2 pb-6 bg-white flex items-center ">
                             <canvas id="gender" class=" w-[100%] h-60"></canvas>
                         </div>
-                        <div class="w-[50%] rounded-lg px-4 pt-2 pb-6 shadow-md bg-white flex items-center">
+                        <div class="w-[35%] rounded-lg px-4 pt-2 pb-6 bg-white flex items-center">
                             <canvas id="age" class=" w-[100%] h-60"></canvas>
                         </div>
+                        <div class="main-list flex flex-col w-[35%] p-2 bg-white rounded-lg h-auto">
+                            <div class="top flex items-center justify-between mb-2 px-1">
+                                <h2 class="font-bold text-[16px] text-[#333]">Students Information</h2>
+                                <button onclick="window.location.href='Students.html'" class="bg-blue-500 px-2 py-1 text-white rounded cursor-pointer hover:bg-blue-600 text-sm">
+                                Full View
+                                </button>
+                            </div>
+                            <div class="item flex items-center justify-between py-1 px-1 bg-blue-100 text-stone-500 rounded-sm text-sm ">
+                                <span class="text-center w-[25%]">Name</span>
+                                <span class="text-center w-[25%]">Age</span>
+                                <span class="text-center w-[25%]">Gender</span>
+                                <span class="text-center w-[25%]">Hours</span>
+                            </div>
+                            <div class="list w-[100%] h-60 overflow-y-scroll text-sm"></div>
+                        </div>
                     </div>
-                    <div class="flex w-[100%] rounded-lg px-4 pt-2 pb-6 shadow-md bg-white"">
+                    <div class="flex w-[100%] rounded-lg px-4 pt-2 pb-6 bg-white"">
                         <div class="w-[100%]">
                             <canvas id="hours" class=" w-[100%] h-70"></canvas>
                         </div>

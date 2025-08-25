@@ -34,13 +34,13 @@
             <form action="submit" class="flex flex-col w-[100%] p-5 gap-10 mb-8 rounded-lg shadow-lg bg-white hidden">
                 <div class="upper w-[100%] flex items-center gap-4">
                     <div class="field w-[33.33%]">
-                        <input type="text" placeholder="First Name *" class="w-[100%] h-[35px] outline-none rounded-sm pl-2 bg-stone-100" required>
+                        <input type="text" id="firstName" placeholder="First Name *" class="w-[100%] h-[35px] outline-none rounded-sm pl-2 bg-stone-100" required>
                     </div>
                     <div class="field w-[33.33%]">
-                        <input type="text" placeholder="Last Name *" class="w-[100%] h-[35px] outline-none rounded-sm pl-2 bg-stone-100" required>
+                        <input type="text" id="lastName" placeholder="Last Name *" class="w-[100%] h-[35px] outline-none rounded-sm pl-2 bg-stone-100" required>
                     </div>
                     <div class="field w-[33.33%]">
-                        <input type="text" placeholder="Age *" class="w-[100%] h-[35px] outline-none rounded-sm pl-2 bg-stone-100" required>
+                        <input type="text" id="age" placeholder="Age *" class="w-[100%] h-[35px] outline-none rounded-sm pl-2 bg-stone-100" required>
                     </div>
                 </div>
                 <div class="lower w-[100%] flex items-center gap-4">
@@ -53,21 +53,24 @@
                     <div class="field w-[33.33%]">
                         <button class="w-[100%] h-[35px] outline-none rounded-sm pl-2 bg-blue-500 text-white font-bold cursor-pointer">Add</button>
                     </div>
-                    <div class="field w-[33.33%]"></div>
+                    <div class="field w-[33.33%] flex justify-end ">
+                        <i class="fa-solid fa-circle-xmark text-2xl text-blue-500 cursor-pointer" id="close"></i>
+                    </div>
                 </div>
             </form>
             <div class="main-list flex flex-col w-[100%] p-8 bg-white rounded-3xl shadow-lg h-[500px]">
                 <h2 class="mb-5">Students Information</h2>
-                    <div class="item flex items-center justify-between py-3 px-8 bg-blue-100 text-stone-500 rounded-sm">
-                    <span class="text-center w-[25%]">Full Name</span>
-                    <span class="text-center w-[25%]">Age</span>
-                    <span class="text-center w-[25%]">Gender</span>
-                    <span class="text-center w-[25%]">Total Hours</span>
-                    <span class="text-center w-[25%]">Action</span>
-                </div>
-                <div class="list w-[100%]  overflow-y-scroll">
+                    <div class="item flex items-center justify-between py-3 px-4 bg-blue-100 text-stone-500 rounded-sm">
+                        <span class="text-center w-[25%]">ID</span>
+                        <span class="text-center w-[25%]">Full Name</span>
+                        <span class="text-center w-[25%]">Age</span>
+                        <span class="text-center w-[25%]">Gender</span>
+                        <span class="text-center w-[25%]">Total Hours</span>
+                        <span class="text-center w-[25%]">Action</span>
+                    </div>
+                    <div class="list w-[100%]  overflow-y-scroll">
 
-                </div>
+                    </div>
             </div>
         </div>
     </div>

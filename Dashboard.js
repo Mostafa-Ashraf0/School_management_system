@@ -45,6 +45,7 @@ async function fetchData() {
     drawAge();
     drawHours();
     cardsStart();
+    createListItems();
   } catch (err) {
     console.error("Error loading data:", err);
   }
@@ -116,6 +117,23 @@ function female(data) {
   return studentsData.filter((e) => e.gender === "Female").length;
 }
 
+//students list view
+function createListItems() {
+  const studentsList = document.querySelector(".list");
+  const studentsItems = studentsData
+    .map((student) => {
+      return `
+      <div class="item flex items-center justify-between py-1 px-1 border-b-1 border-stone-200">
+        <span class="text-center w-[25%]">${student.name}</span>
+        <span class="text-center w-[25%]">${student.age}</span>
+        <span class="text-center w-[25%]">${student.gender}</span>
+        <span class="text-center w-[25%]">${student.total_hours}</span>
+      </div>`;
+    })
+    .join("");
+  studentsList.innerHTML += studentsItems;
+}
+
 // gender chart
 function drawGender() {
   const gender = document.getElementById("gender");
@@ -182,7 +200,7 @@ function drawAge() {
         {
           label: "count",
           data: [section1, section2, section3],
-          borderWidth: 1,
+          borderWidth: 3,
           backgroundColor: ["#60A5FA", "#3444d3ff", "#5161e9ff"],
         },
       ],
@@ -254,6 +272,7 @@ function drawHours() {
     options: {
       responsive: true, // default: true
       maintainAspectRatio: false,
+      indexAxis: "y",
       scales: {
         y: {
           beginAtZero: true,
