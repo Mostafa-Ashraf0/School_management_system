@@ -1,4 +1,4 @@
-let studentsData = JSON.parse(localStorage.getItem("studentsData")) || [];
+let teachersData = JSON.parse(localStorage.getItem("teachersData")) || [];
 
 //logout button functionality
 const logoutButton = document.querySelector("#logout");
@@ -30,33 +30,34 @@ const bgColor = localStorage.getItem("bg-color");
 const color = localStorage.getItem("color");
 currentLisItem.classList.add(bgColor, color);
 
-//display add student form onclick
-const addStudentBtn = document.querySelector(".add-student");
-const form = document.querySelector(".students-list form");
-addStudentBtn.addEventListener("click", () => {
+//display add teachers form onclick
+const addTeacherBtn = document.querySelector(".add-teacher");
+const form = document.querySelector(".teachers-list form");
+addTeacherBtn.addEventListener("click", () => {
   form.classList.remove("hidden");
-  addStudentBtn.classList.add("hidden");
+  addTeacherBtn.classList.add("hidden");
 });
 
 //hide form onclick
 const closeIcon = document.querySelector("#close");
 closeIcon.addEventListener("click", () => {
   form.classList.add("hidden");
-  addStudentBtn.classList.remove("hidden");
+  addTeacherBtn.classList.remove("hidden");
 });
 
 form.addEventListener("submit", () => {
   form.classList.add("hidden");
-  addStudentBtn.classList.remove("hidden");
+  addTeacherBtn.classList.remove("hidden");
 });
 
+//fetch initial data
 async function fetchData() {
   try {
-    const response = await fetch("students_50.json");
+    const response = await fetch("teachers_10.json");
     const data = await response.json();
-    if (studentsData.length === 0) {
-      studentsData = data;
-      localStorage.setItem("studentsData", JSON.stringify(studentsData));
+    if (teachersData.length === 0) {
+      teachersData = data;
+      localStorage.setItem("teachersData", JSON.stringify(teachersData));
     }
     createListItems();
   } catch (err) {
@@ -66,22 +67,21 @@ async function fetchData() {
 fetchData();
 
 function createListItems() {
-  const studentsList = document.querySelector(".list");
-  const studentsStore = JSON.parse(localStorage.getItem("studentsData")) || [];
-  const studentsItems = studentsStore
-    .map((student) => {
+  const teachersList = document.querySelector(".list");
+  const teachersStore = JSON.parse(localStorage.getItem("teachersData")) || [];
+  const teachersItems = teachersStore
+    .map((teacher) => {
       return `
-      <div class="item flex items-center justify-between py-3 px-4 border-b-1 border-stone-200 hover:bg-blue-300" data-id = ${student.id}>
-        <span class="text-center w-[25%]">${student.id}</span>
-        <span class="text-center w-[25%]">${student.name}</span>
-        <span class="text-center w-[25%]">${student.age}</span>
-        <span class="text-center w-[25%]">${student.gender}</span>
-        <span class="text-center w-[25%]">${student.total_hours}</span>
-        <span class="text-center w-[25%]"><i class="delete fa-solid fa-trash cursor-pointer" data-id = ${student.id}></i> | <i class="edit fa-solid fa-pen cursor-pointer" data-id = ${student.id}></i></span>
+      <div class="item flex items-center justify-between py-3 px-4 border-b-1 border-stone-200 hover:bg-blue-300" data-id = ${teacher.id}>
+        <span class="text-center w-[25%]">${teacher.id}</span>
+        <span class="text-center w-[25%]">${teacher.name}</span>
+        <span class="text-center w-[25%]">${teacher.age}</span>
+        <span class="text-center w-[25%]">${teacher.gender}</span>
+        <span class="text-center w-[25%]"><i class="delete fa-solid fa-trash cursor-pointer" data-id = ${teacher.id}></i> | <i class="edit fa-solid fa-pen cursor-pointer" data-id = ${teacher.id}></i></span>
       </div>`;
     })
     .join("");
-  studentsList.innerHTML = studentsItems;
+  teachersList.innerHTML = teachersItems;
 }
 
 //view profile onclick
@@ -93,7 +93,7 @@ list.addEventListener("click", (e) => {
   if (!item) return;
   if (!e.target.classList.contains("delete")) {
     const itemId = parseInt(item.getAttribute("data-id"));
-    const student = studentsData.find((student) => student.id === itemId);
+    const teacher = teachersData.find((teacher) => teacher.id === itemId);
     profile.classList.remove("hidden");
     profile.innerHTML = `
                   <div class="profile-card w-[700px] h-[500px] bg-white rounded-3xl shadow-lg p-5 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
@@ -101,20 +101,12 @@ list.addEventListener("click", (e) => {
                     <div class="img">
                         <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000" alt="profile" class="w-[100px] h-[100px] object-cover rounded-full mx-auto mb-4">
                     </div>
-                    <h2 class="text-2xl font-bold mb-4">${student.name}</h2>
+                    <h2 class="text-2xl font-bold mb-4">${teacher.name}</h2>
                     <div class="lower flex flex-col items-center justify-between w-[100%] py-5 px-10 gap-10">
                       <div class="info w-[100%] flex items-center justify-center gap-10">
-                        <p class="bg-red-500 py-1 px-3 text-base font-normal text-white rounded-3xl">Student ID: <span class="font-bold text-base">${student.id}</span></p>
-                        <p class="bg-red-500 py-1 px-3 text-base font-normal text-white rounded-3xl">Age: <span class="font-bold text-base">${student.age}</span></p>
-                        <p class="bg-red-500 py-1 px-3 text-base font-normal text-white rounded-3xl">Total Hours: <span class="font-bold text-base">${student.total_hours}</span></p>
+                        <p class="bg-red-500 py-1 px-3 text-base font-normal text-white rounded-3xl">Student ID: <span class="font-bold text-base">${teacher.id}</span></p>
+                        <p class="bg-red-500 py-1 px-3 text-base font-normal text-white rounded-3xl">Age: <span class="font-bold text-base">${teacher.age}</span></p>
                       </div>
-                      <ul class="w-[100%] flex flex-col items-start gap-5">
-                              <li class="font-medium text-base">Math: <span class="bg-blue-500 py-1 px-3 text-base font-normal text-white rounded-3xl">${student.grades.Math}</span></li>
-                              <li class="font-medium text-base">English: <span class="bg-blue-500 py-1 px-3 text-base font-normal text-white rounded-3xl">${student.grades.English}</span></li>
-                              <li class="font-medium text-base">Physics: <span class="bg-blue-500 py-1 px-3 text-base font-normal text-white rounded-3xl">${student.grades.Physics}</span></li>
-                              <li class="font-medium text-base">Chemistry: <span class="bg-blue-500 py-1 px-3 text-base font-normal text-white rounded-3xl">${student.grades.Chemistry}</span></li>
-                              <li class="font-medium text-base">Biology: <span class="bg-blue-500 py-1 px-3 text-base font-normal text-white rounded-3xl">${student.grades.Biology}</span></li>
-                      </ul>
                     </div>
                 </div>`;
     const closeProfile = document.querySelector("#close-profile");
@@ -125,40 +117,38 @@ list.addEventListener("click", (e) => {
 });
 
 // add new student
-const addStudentForm = document.querySelector(".students-list form");
-addStudentForm.addEventListener("submit", (e) => {
+const teacherForm = document.querySelector(".teachers-list form");
+teacherForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const studentsList = document.querySelector(".list");
-  const newStudent = {};
+  const teachersList = document.querySelector(".list");
+  const newTeacher = {};
   const firstName = document.querySelector("#firstName").value;
   const lastName = document.querySelector("#lastName").value;
   const age = document.querySelector("#age").value;
   const gender = document.querySelector("#gender").value;
-  newStudent.id = studentsData[studentsData.length - 1].id + 1;
-  newStudent.name = firstName + " " + lastName;
-  newStudent.age = parseInt(age);
-  newStudent.gender = gender;
-  newStudent.total_hours = 0;
-  newStudent.grades = {};
-  studentsData.push(newStudent);
-  localStorage.setItem("studentsData", JSON.stringify(studentsData));
-  studentsList.innerHTML = "";
+  newTeacher.id = teachersData[teachersData.length - 1].id + 1;
+  newTeacher.name = firstName + " " + lastName;
+  newTeacher.age = parseInt(age);
+  newTeacher.gender = gender;
+  teachersData.push(newTeacher);
+  localStorage.setItem("teachersData", JSON.stringify(teachersData));
+  teachersList.innerHTML = "";
   createListItems();
-  addStudentForm.reset();
+  teacherForm.reset();
 });
 
-//delete student
-const studentsList = document.querySelector(".list");
+//delete teacher
+const teacherList = document.querySelector(".list");
 
-studentsList.addEventListener("click", (e) => {
-  const studentId = parseInt(e.target.getAttribute("data-id"));
+teacherList.addEventListener("click", (e) => {
+  const teacherId = parseInt(e.target.getAttribute("data-id"));
   if (e.target.classList.contains("delete")) {
-    studentsData = studentsData.filter((student) => student.id !== studentId);
-    localStorage.setItem("studentsData", JSON.stringify(studentsData));
+    teachersData = teachersData.filter((teacher) => teacher.id !== teacherId);
+    localStorage.setItem("teachersData", JSON.stringify(teachersData));
     createListItems();
   } else if (e.target.classList.contains("edit")) {
     //change in data will reflect in studentsData due to shared reference
-    data = studentsData.find((student) => student.id === studentId);
+    data = teachersData.find((teacher) => teacher.id === teacherId);
     profile.classList.remove("hidden");
     profile.innerHTML = `
                   <div class="profile-card w-[700px] h-[500px] bg-white rounded-3xl shadow-lg p-5 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
@@ -184,10 +174,9 @@ studentsList.addEventListener("click", (e) => {
       data.name = name.value;
       data.age = age.value;
       data.gender = gender.value;
-      localStorage.setItem("studentsData", JSON.stringify(studentsData));
+      localStorage.setItem("teachersData", JSON.stringify(teachersData));
       profile.classList.add("hidden");
       createListItems();
-      console.log(studentsData);
     });
 
     const closeProfile = document.querySelector("#close-profile");

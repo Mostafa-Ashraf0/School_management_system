@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Students</title>
+    <title>Teachers</title>
 </head>
     <body style="box-sizing: border-box; margin: 0; padding: 0;">
     <div class="flex bg-white ">
@@ -17,8 +17,8 @@
             <div class="Sidebar flex flex-col h-screen w-[100%] justify-between text-stone-400 text-sm font-medium py-6 px-4">
                 <ul class="flex flex-col py-4 h-[80%] px-2 gap-4">
                     <li><a href="Dashboard.html">Dashboard</a></li>
-                    <li><a href="Students.html" class="current">Students</a></li>
-                    <li><a href="Teachers.html">Teachers</a></li>
+                    <li><a href="Students.html" >Students</a></li>
+                    <li><a href="Teachers.html" class="current">Teachers</a></li>
                     <li><a href="">settings</a></li>
                 </ul>
                 <button class="w-full bg-blue-500 text-white p-2 rounded 
@@ -27,9 +27,9 @@
                 </button>
             </div>
         </div>
-        <div class="students-list w-[80%] flex flex-col p-10 bg-stone-50">
-            <div class="add-student flex gap-2 items-center border-1 border-blue-500 rounded-3xl w-[150px] px-3 py-[1px] font-semibold mb-8 cursor-pointer">
-                <span class="text-semibold text-[20px]">+</span>add student
+        <div class="teachers-list w-[80%] flex flex-col p-10 bg-stone-50">
+            <div class="add-teacher flex gap-2 items-center border-1 border-blue-500 rounded-3xl w-[150px] px-3 py-[1px] font-semibold mb-8 cursor-pointer">
+                <span class="text-semibold text-[20px]">+</span>add Teacher
             </div>
             <form action="submit" class="flex flex-col w-[100%] p-5 gap-10 mb-8 rounded-lg shadow-lg bg-white hidden">
                 <div class="upper w-[100%] flex items-center gap-4">
@@ -59,25 +59,24 @@
                 </div>
             </form>
             <div class="main-list flex flex-col w-[100%] p-8 bg-white rounded-3xl shadow-lg h-[500px]">
-                <h2 class="mb-5">Students Information</h2>
+                <h2 class="mb-5">Teachers Information</h2>
                     <div class="item flex items-center justify-between py-3 px-4 bg-blue-100 text-stone-500 rounded-sm">
                         <span class="text-center w-[25%]">ID</span>
                         <span class="text-center w-[25%]">Full Name</span>
                         <span class="text-center w-[25%]">Age</span>
                         <span class="text-center w-[25%]">Gender</span>
-                        <span class="text-center w-[25%]">Total Hours</span>
                         <span class="text-center w-[25%]">Action</span>
                     </div>
                     <div class="list w-[100%]  overflow-y-scroll">
                     </div>
             </div>
         </div>
-        <div class="student-profile">
+        <div class="teacher-profile">
             <div class="profile w-[100%] h-[100%] fixed top-0 left-0 bg-blue-500/50 hidden">
                 
             </div>
         </div>
     </div>
-    <script src="Students.js"></script>
+    <script src="Teachers.js"></script>
 </body>
 </html>

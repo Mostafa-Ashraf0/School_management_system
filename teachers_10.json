@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Ahmed Hassan",
+    "age": 35,
+    "gender": "Male",
+    "course": "Mathematics"
+  },
+  {
+    "id": 2,
+    "name": "Mona Ali",
+    "age": 29,
+    "gender": "Female",
+    "course": "English"
+  },
+  {
+    "id": 3,
+    "name": "Karim Youssef",
+    "age": 40,
+    "gender": "Male",
+    "course": "Physics"
+  },
+  {
+    "id": 4,
+    "name": "Sara Mohamed",
+    "age": 32,
+    "gender": "Female",
+    "course": "Biology"
+  },
+  {
+    "id": 5,
+    "name": "Omar Samir",
+    "age": 45,
+    "gender": "Male",
+    "course": "Chemistry"
+  },
+  {
+    "id": 6,
+    "name": "Heba Adel",
+    "age": 27,
+    "gender": "Female",
+    "course": "History"
+  },
+  {
+    "id": 7,
+    "name": "Mahmoud Tarek",
+    "age": 38,
+    "gender": "Male",
+    "course": "Computer Science"
+  },
+  {
+    "id": 8,
+    "name": "Nour Hany",
+    "age": 31,
+    "gender": "Female",
+    "course": "Geography"
+  },
+  {
+    "id": 9,
+    "name": "Mostafa Ibrahim",
+    "age": 36,
+    "gender": "Male",
+    "course": "Arabic"
+  },
+  {
+    "id": 10,
+    "name": "Laila Nader",
+    "age": 30,
+    "gender": "Female",
+    "course": "French"
+  }
+]
