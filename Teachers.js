@@ -1,54 +1,13 @@
+import { createListItems } from "./createListItems/createTeachersListItems.js";
+import { formDisplay } from "./formOfAddNewDisplay.js";
+import { drawTeacherProfile } from "./teacherProfile.js";
+
 let teachersData = JSON.parse(localStorage.getItem("teachersData")) || [];
 
-//logout button functionality
-const logoutButton = document.querySelector("#logout");
-logoutButton.addEventListener("click", () => {
-  localStorage.removeItem("username");
-  localStorage.removeItem("password");
-  localStorage.setItem("isLoggedIn", "false");
-  window.location.href = "index.html";
-});
-
-//sidebar styling
-const sidebarList = document.querySelectorAll(".Sidebar ul li a");
-
-sidebarList.forEach((link) => {
-  link.classList.add(
-    "rounded-lg",
-    "px-4",
-    "flex",
-    "w-full",
-    "gap-4",
-    "items-center",
-    "p-2",
-    "cursor-pointer"
-  );
-});
-
-const currentLisItem = document.querySelector(".Sidebar ul li .current");
-const bgColor = localStorage.getItem("bg-color");
-const color = localStorage.getItem("color");
-currentLisItem.classList.add(bgColor, color);
-
-//display add teachers form onclick
-const addTeacherBtn = document.querySelector(".add-teacher");
-const form = document.querySelector(".teachers-list form");
-addTeacherBtn.addEventListener("click", () => {
-  form.classList.remove("hidden");
-  addTeacherBtn.classList.add("hidden");
-});
-
-//hide form onclick
-const closeIcon = document.querySelector("#close");
-closeIcon.addEventListener("click", () => {
-  form.classList.add("hidden");
-  addTeacherBtn.classList.remove("hidden");
-});
-
-form.addEventListener("submit", () => {
-  form.classList.add("hidden");
-  addTeacherBtn.classList.remove("hidden");
-});
+//display Add new teacher form
+const teacherBtn = document.querySelector(".add-teacher");
+const teachersForm = document.querySelector(".teachers-list form");
+formDisplay(teacherBtn, teachersForm);
 
 //fetch initial data
 async function fetchData() {
@@ -66,55 +25,8 @@ async function fetchData() {
 }
 fetchData();
 
-function createListItems() {
-  const teachersList = document.querySelector(".list");
-  const teachersStore = JSON.parse(localStorage.getItem("teachersData")) || [];
-  const teachersItems = teachersStore
-    .map((teacher) => {
-      return `
-      <div class="item flex items-center justify-between py-3 px-4 border-b-1 border-stone-200 hover:bg-blue-300" data-id = ${teacher.id}>
-        <span class="text-center w-[25%]">${teacher.id}</span>
-        <span class="text-center w-[25%]">${teacher.name}</span>
-        <span class="text-center w-[25%]">${teacher.age}</span>
-        <span class="text-center w-[25%]">${teacher.gender}</span>
-        <span class="text-center w-[25%]"><i class="delete fa-solid fa-trash cursor-pointer" data-id = ${teacher.id}></i> | <i class="edit fa-solid fa-pen cursor-pointer" data-id = ${teacher.id}></i></span>
-      </div>`;
-    })
-    .join("");
-  teachersList.innerHTML = teachersItems;
-}
-
-//view profile onclick
-// select the list because items are generated dynamically and not found on initial load
-const list = document.querySelector(".list");
-const profile = document.querySelector(".profile");
-list.addEventListener("click", (e) => {
-  const item = e.target.closest(".item");
-  if (!item) return;
-  if (!e.target.classList.contains("delete")) {
-    const itemId = parseInt(item.getAttribute("data-id"));
-    const teacher = teachersData.find((teacher) => teacher.id === itemId);
-    profile.classList.remove("hidden");
-    profile.innerHTML = `
-                  <div class="profile-card w-[700px] h-[500px] bg-white rounded-3xl shadow-lg p-5 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                    <i class="fa-solid fa-circle-xmark text-2xl text-blue-500 cursor-pointer absolute top-4 right-4" id="close-profile"></i>
-                    <div class="img">
-                        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000" alt="profile" class="w-[100px] h-[100px] object-cover rounded-full mx-auto mb-4">
-                    </div>
-                    <h2 class="text-2xl font-bold mb-4">${teacher.name}</h2>
-                    <div class="lower flex flex-col items-center justify-between w-[100%] py-5 px-10 gap-10">
-                      <div class="info w-[100%] flex items-center justify-center gap-10">
-                        <p class="bg-red-500 py-1 px-3 text-base font-normal text-white rounded-3xl">Student ID: <span class="font-bold text-base">${teacher.id}</span></p>
-                        <p class="bg-red-500 py-1 px-3 text-base font-normal text-white rounded-3xl">Age: <span class="font-bold text-base">${teacher.age}</span></p>
-                      </div>
-                    </div>
-                </div>`;
-    const closeProfile = document.querySelector("#close-profile");
-    closeProfile.addEventListener("click", () => {
-      profile.classList.add("hidden");
-    });
-  }
-});
+//draw teacher profile
+drawTeacherProfile();
 
 // add new student
 const teacherForm = document.querySelector(".teachers-list form");

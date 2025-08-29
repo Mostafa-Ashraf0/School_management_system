@@ -77,7 +77,34 @@
                 
             </div>
         </div>
+        <div class="assign-form">
+            <div class="assign w-[100%] h-[100%] fixed top-0 left-0 bg-blue-500/50 hidden">
+                <div class="assign-card w-[700px] h-[500px] bg-white rounded-3xl shadow-lg p-5 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <i class="fa-solid fa-circle-xmark text-2xl text-blue-500 cursor-pointer absolute top-4 right-4" id="close-profile"></i>
+                    <h3>Assign student to course</h3>
+                    <form class="assign-student">
+                        <select name="course" id="course" class="w-[100%] h-[35px] outline-none rounded-sm pl-2 bg-stone-100" required>
+                            <option value="#" selected>Select Course</option>
+                            <option value="English">English</option>
+                            <option value="Math">Math</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="Biology">Biology</option>
+                            <option value="Arabic">Arabic</option>
+                        </select>
+                        <select name="teacher" id="teacher" class="w-[100%] h-[35px] outline-none rounded-sm pl-2 bg-stone-100" required>
+                            
+                        </select>
+                        <select name="class" id="class" class="w-[100%] h-[35px] outline-none rounded-sm pl-2 bg-stone-100" required>
+                            
+                        </select>
+                        <button type="submit" class="bg-black text-white cursor-pointer">Assign</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="Students.js"></script>
+    <script type="module" src="Students.js"></script>
+    <script src="logout.js"></script>
+    <script src="sidebarStyle.js"></script>
 </body>
 </html>

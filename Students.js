@@ -1,54 +1,13 @@
+import { createListItems } from "./createListItems/createStudentsListItems.js";
+import { formDisplay } from "./formOfAddNewDisplay.js";
+import { drawStudentProfile } from "./studentProfile.js";
 let studentsData = JSON.parse(localStorage.getItem("studentsData")) || [];
+let teachersData = JSON.parse(localStorage.getItem("teachersData")) || [];
 
-//logout button functionality
-const logoutButton = document.querySelector("#logout");
-logoutButton.addEventListener("click", () => {
-  localStorage.removeItem("username");
-  localStorage.removeItem("password");
-  localStorage.setItem("isLoggedIn", "false");
-  window.location.href = "index.html";
-});
-
-//sidebar styling
-const sidebarList = document.querySelectorAll(".Sidebar ul li a");
-
-sidebarList.forEach((link) => {
-  link.classList.add(
-    "rounded-lg",
-    "px-4",
-    "flex",
-    "w-full",
-    "gap-4",
-    "items-center",
-    "p-2",
-    "cursor-pointer"
-  );
-});
-
-const currentLisItem = document.querySelector(".Sidebar ul li .current");
-const bgColor = localStorage.getItem("bg-color");
-const color = localStorage.getItem("color");
-currentLisItem.classList.add(bgColor, color);
-
-//display add student form onclick
-const addStudentBtn = document.querySelector(".add-student");
-const form = document.querySelector(".students-list form");
-addStudentBtn.addEventListener("click", () => {
-  form.classList.remove("hidden");
-  addStudentBtn.classList.add("hidden");
-});
-
-//hide form onclick
-const closeIcon = document.querySelector("#close");
-closeIcon.addEventListener("click", () => {
-  form.classList.add("hidden");
-  addStudentBtn.classList.remove("hidden");
-});
-
-form.addEventListener("submit", () => {
-  form.classList.add("hidden");
-  addStudentBtn.classList.remove("hidden");
-});
+//display Add new student form
+const studentAddBtn = document.querySelector(".add-student");
+const studentForm = document.querySelector(".students-list form");
+formDisplay(studentAddBtn, studentForm);
 
 async function fetchData() {
   try {
@@ -65,64 +24,8 @@ async function fetchData() {
 }
 fetchData();
 
-function createListItems() {
-  const studentsList = document.querySelector(".list");
-  const studentsStore = JSON.parse(localStorage.getItem("studentsData")) || [];
-  const studentsItems = studentsStore
-    .map((student) => {
-      return `
-      <div class="item flex items-center justify-between py-3 px-4 border-b-1 border-stone-200 hover:bg-blue-300" data-id = ${student.id}>
-        <span class="text-center w-[25%]">${student.id}</span>
-        <span class="text-center w-[25%]">${student.name}</span>
-        <span class="text-center w-[25%]">${student.age}</span>
-        <span class="text-center w-[25%]">${student.gender}</span>
-        <span class="text-center w-[25%]">${student.total_hours}</span>
-        <span class="text-center w-[25%]"><i class="delete fa-solid fa-trash cursor-pointer" data-id = ${student.id}></i> | <i class="edit fa-solid fa-pen cursor-pointer" data-id = ${student.id}></i></span>
-      </div>`;
-    })
-    .join("");
-  studentsList.innerHTML = studentsItems;
-}
-
-//view profile onclick
-// select the list because items are generated dynamically and not found on initial load
-const list = document.querySelector(".list");
-const profile = document.querySelector(".profile");
-list.addEventListener("click", (e) => {
-  const item = e.target.closest(".item");
-  if (!item) return;
-  if (!e.target.classList.contains("delete")) {
-    const itemId = parseInt(item.getAttribute("data-id"));
-    const student = studentsData.find((student) => student.id === itemId);
-    profile.classList.remove("hidden");
-    profile.innerHTML = `
-                  <div class="profile-card w-[700px] h-[500px] bg-white rounded-3xl shadow-lg p-5 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                    <i class="fa-solid fa-circle-xmark text-2xl text-blue-500 cursor-pointer absolute top-4 right-4" id="close-profile"></i>
-                    <div class="img">
-                        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000" alt="profile" class="w-[100px] h-[100px] object-cover rounded-full mx-auto mb-4">
-                    </div>
-                    <h2 class="text-2xl font-bold mb-4">${student.name}</h2>
-                    <div class="lower flex flex-col items-center justify-between w-[100%] py-5 px-10 gap-10">
-                      <div class="info w-[100%] flex items-center justify-center gap-10">
-                        <p class="bg-red-500 py-1 px-3 text-base font-normal text-white rounded-3xl">Student ID: <span class="font-bold text-base">${student.id}</span></p>
-                        <p class="bg-red-500 py-1 px-3 text-base font-normal text-white rounded-3xl">Age: <span class="font-bold text-base">${student.age}</span></p>
-                        <p class="bg-red-500 py-1 px-3 text-base font-normal text-white rounded-3xl">Total Hours: <span class="font-bold text-base">${student.total_hours}</span></p>
-                      </div>
-                      <ul class="w-[100%] flex flex-col items-start gap-5">
-                              <li class="font-medium text-base">Math: <span class="bg-blue-500 py-1 px-3 text-base font-normal text-white rounded-3xl">${student.grades.Math}</span></li>
-                              <li class="font-medium text-base">English: <span class="bg-blue-500 py-1 px-3 text-base font-normal text-white rounded-3xl">${student.grades.English}</span></li>
-                              <li class="font-medium text-base">Physics: <span class="bg-blue-500 py-1 px-3 text-base font-normal text-white rounded-3xl">${student.grades.Physics}</span></li>
-                              <li class="font-medium text-base">Chemistry: <span class="bg-blue-500 py-1 px-3 text-base font-normal text-white rounded-3xl">${student.grades.Chemistry}</span></li>
-                              <li class="font-medium text-base">Biology: <span class="bg-blue-500 py-1 px-3 text-base font-normal text-white rounded-3xl">${student.grades.Biology}</span></li>
-                      </ul>
-                    </div>
-                </div>`;
-    const closeProfile = document.querySelector("#close-profile");
-    closeProfile.addEventListener("click", () => {
-      profile.classList.add("hidden");
-    });
-  }
-});
+//draw student profile on click
+drawStudentProfile();
 
 // add new student
 const addStudentForm = document.querySelector(".students-list form");
@@ -147,15 +50,16 @@ addStudentForm.addEventListener("submit", (e) => {
   addStudentForm.reset();
 });
 
-//delete student
+//delete student / edit /assign
 const studentsList = document.querySelector(".list");
-
 studentsList.addEventListener("click", (e) => {
   const studentId = parseInt(e.target.getAttribute("data-id"));
+  //delete student
   if (e.target.classList.contains("delete")) {
     studentsData = studentsData.filter((student) => student.id !== studentId);
     localStorage.setItem("studentsData", JSON.stringify(studentsData));
     createListItems();
+    //edit student
   } else if (e.target.classList.contains("edit")) {
     //change in data will reflect in studentsData due to shared reference
     data = studentsData.find((student) => student.id === studentId);
@@ -193,6 +97,75 @@ studentsList.addEventListener("click", (e) => {
     const closeProfile = document.querySelector("#close-profile");
     closeProfile.addEventListener("click", () => {
       profile.classList.add("hidden");
+    });
+    //assign student to teacher
+  } else if (e.target.classList.contains("add")) {
+    const form = document.querySelector(".assign-student");
+    const course = document.querySelector("#course");
+    const teacher = document.querySelector("#teacher");
+    const classSection = document.querySelector("#class");
+    // create object contains course and each teaher for it
+    const teacherByCourse = teachersData.reduce((acc, t) => {
+      if (!acc[t.course]) acc[t.course] = [];
+      acc[t.course].push(t.name);
+      return acc;
+    }, {});
+    const assignForm = document.querySelector(".assign");
+    assignForm.classList.remove("hidden");
+    //after selecting course, a list of all teachers appear
+    course.addEventListener("change", (e) => {
+      teacher.innerHTML = `<option value="#" selected>Select Teacher</option>`;
+      const selected = course.value;
+      teacherByCourse[selected].forEach((t) => {
+        const option = document.createElement("option");
+        option.value = t;
+        option.textContent = t;
+        teacher.appendChild(option);
+      });
+    });
+    teacher.addEventListener("change", () => {
+      const selectedTeacher = teacher.value;
+      const teacherClasses = teachersData.find(
+        (t) => t.name === selectedTeacher
+      ).classes;
+      classSection.innerHTML = `<option value="#" selected>Select Class</option>`;
+      Object.entries(teacherClasses).forEach(([key, value]) => {
+        const option = document.createElement("option");
+        option.value = key;
+        option.textContent = key;
+        classSection.appendChild(option);
+      });
+    });
+
+    function assignStudent() {
+      const selectedTeacher = teacher.value;
+      const subTeacher = teachersData.find(
+        (teacher) => teacher.name === selectedTeacher
+      );
+      //selected student
+      const subStudent = studentsData.find(
+        (student) => student.id === studentId
+      );
+      if (subTeacher) {
+        const selectedClass = classSection.value;
+        const subClass = subTeacher.classes[selectedClass];
+        const exists = subClass.some((student) => student.id === subStudent.id);
+
+        if (!exists) {
+          subClass.push(subStudent);
+        } else {
+          console.log("Student already exists in this class");
+        }
+      }
+      const updatedTeachers = teachersData.map((teacher) =>
+        teacher.id === subTeacher.id ? subTeacher : teacher
+      );
+      localStorage.setItem("teachersData", JSON.stringify(updatedTeachers));
+    }
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      //selected teacher
+      assignStudent();
     });
   }
 });

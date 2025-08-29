@@ -4,69 +4,119 @@
     "name": "Ahmed Hassan",
     "age": 35,
     "gender": "Male",
-    "course": "Mathematics"
+    "course": "Math",
+    "classes":{
+      "class1":[],
+      "class2":[],
+      "class3":[]
+    }
   },
   {
     "id": 2,
     "name": "Mona Ali",
     "age": 29,
     "gender": "Female",
-    "course": "English"
+    "course": "English",
+    "classes":{
+      "class1":[],
+      "class2":[],
+      "class3":[]
+    }
   },
   {
     "id": 3,
     "name": "Karim Youssef",
     "age": 40,
     "gender": "Male",
-    "course": "Physics"
+    "course": "Physics",
+    "classes":{
+      "class1":[],
+      "class2":[],
+      "class3":[]
+    }
   },
   {
     "id": 4,
     "name": "Sara Mohamed",
     "age": 32,
     "gender": "Female",
-    "course": "Biology"
+    "course": "Biology",
+    "classes":{
+      "class1":[],
+      "class2":[],
+      "class3":[]
+    }
   },
   {
     "id": 5,
     "name": "Omar Samir",
     "age": 45,
     "gender": "Male",
-    "course": "Chemistry"
+    "course": "Chemistry",
+    "classes":{
+      "class1":[],
+      "class2":[],
+      "class3":[]
+    }
   },
   {
     "id": 6,
     "name": "Heba Adel",
     "age": 27,
     "gender": "Female",
-    "course": "History"
+    "course": "English",
+    "classes":{
+      "class1":[],
+      "class2":[],
+      "class3":[]
+    }
   },
   {
     "id": 7,
     "name": "Mahmoud Tarek",
     "age": 38,
     "gender": "Male",
-    "course": "Computer Science"
+    "course": "Math",
+    "classes":{
+      "class1":[],
+      "class2":[],
+      "class3":[]
+    }
   },
   {
     "id": 8,
     "name": "Nour Hany",
     "age": 31,
     "gender": "Female",
-    "course": "Geography"
+    "course": "English",
+    "classes":{
+      "class1":[],
+      "class2":[],
+      "class3":[]
+    }
   },
   {
     "id": 9,
     "name": "Mostafa Ibrahim",
     "age": 36,
     "gender": "Male",
-    "course": "Arabic"
+    "course": "Arabic",
+    "classes":{
+      "class1":[],
+      "class2":[],
+      "class3":[]
+    }
   },
   {
     "id": 10,
     "name": "Laila Nader",
     "age": 30,
     "gender": "Female",
-    "course": "French"
+    "course": "Chemistry",
+    "classes":{
+      "class1":[],
+      "class2":[],
+      "class3":[]
+    }
   }
 ]
